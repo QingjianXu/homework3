@@ -1,0 +1,3 @@
+Parallelization of histogram calculations: The histogram_equalization function parallelizes the loop that calculates the histogram frequencies by distributing the workload across multiple threads using #pragma omp parallel for. This allows multiple threads to process different rows of pixels simultaneously, improving overall performance.
+
+Parallelization of cumulative frequency calculations: The loop that calculates cumulative frequencies and new gray levels is also parallelized using OpenMP instructions. Each thread independently calculates a portion of the cumulative frequency, thereby reducing calculation time.
